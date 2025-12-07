@@ -1,0 +1,138 @@
+/* ===== Background Section ===== */
+.signup-page {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background image + blur effect */
+.bg-image {
+  background-image: url("../../../public/background_banner.jpg");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  inset: 0;
+  filter: blur(5px) brightness(55%);
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+/* Overlay for dark effect */
+.signup-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+/* ===== Signup Form ===== */
+.signup-form {
+  position: relative;
+  z-index: 3;
+  width: 500px;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 60px 68px 45px;
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: #fff;
+}
+
+.signup-form h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Input fields */
+.signup-form input {
+    margin-bottom: 20px;
+  width: 100%;
+  padding: 14px 15px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: #333;
+  color: white;
+  font-size: 15px;
+  transition: background 0.3s;
+}
+
+.signup-form input:focus {
+  background: #444;
+}
+
+/* Button */
+.signup-form button {
+  width: 100%;
+  background-color: #e50914;
+  border: none;
+  color: white;
+  padding: 14px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.signup-form button:hover {
+  background-color: #f6121d;
+}
+
+/* Checkbox row */
+.form-options {
+  display: flex;
+  align-items: center;
+  
+  font-size: 13px;
+  color: #b3b3b3;
+  margin-top: 5px;
+  gap: 8px;
+}
+
+.form-options input {
+    margin-top: 18px;
+    margin-right: 6px;
+  width: 16px;
+  height: 16px;
+  accent-color: #e50914;
+}
+
+/* Sign-in text below */
+.signin-text {
+  font-size: 15px;
+  color: #b3b3b3;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.signin-text span {
+  color: white;
+  cursor: pointer;
+}
+
+.signin-text span:hover {
+  text-decoration: underline;
+}
+
+Link{
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .signup-form {
+    width: 90%;
+    padding: 40px 25px;
+  }
+}

@@ -1,0 +1,186 @@
+/* 🌑 Base Navbar */
+.navbar {
+  width: 100%;
+  padding: 24px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 15px;
+  color: #e5e5e5;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), 70%, transparent);
+  z-index: 1000;
+  transition: background 0.3s ease-in-out, padding 0.3s ease;
+}
+
+/* 🔥 Scroll effect (add class via JS when scrolled) */
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 14px 6%;
+}
+
+/* 🔹 Left Section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar-left img {
+  width: 110px;
+  cursor: pointer;
+}
+
+.navbar-left ul {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.navbar-left ul li {
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.navbar-left ul li:hover {
+  color: #fff;
+}
+
+/* 🔹 Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  cursor: pointer;
+}
+
+.navbar-right .icons {
+  width: 22px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.navbar-right .icons:hover {
+  opacity: 1;
+}
+
+.navbar-right .profile {
+  border-radius: 4px;
+  width: 40px;
+}
+
+/* 🔹 Profile Dropdown */
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.navbar .dropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background-color: #191919;
+  padding: 14px 18px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar .dropdown p {
+  font-size: 13px;
+  cursor: pointer;
+  color: #b3b3b3;
+  transition: color 0.2s;
+}
+
+.navbar .dropdown p:hover {
+  color: #fff;
+}
+
+.navbar-profile:hover .dropdown {
+  display: flex;
+}
+
+/* 🔸 Hover underline animation for menu items */
+.navbar-left ul li::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: #e50914;
+  transition: width 0.3s;
+}
+
+.navbar-left ul li:hover::after {
+  width: 100%;
+}
+
+/* 📱 Tablet View */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 18px 5%;
+  }
+
+  .navbar-left ul {
+    gap: 18px;
+  }
+
+  .navbar-left img {
+    width: 90px;
+  }
+}
+
+/* 📱 Mobile View */
+@media (max-width: 800px) {
+  .navbar {
+    padding: 16px 4%;
+  }
+
+  .navbar-left ul {
+    display: none;
+  }
+
+  .navbar-left img {
+    width: 80px;
+  }
+
+  .navbar-right {
+    gap: 12px;
+  }
+
+  .navbar-right .icons {
+    width: 20px;
+  }
+}
+
+/* 📱 Small Mobile */
+@media (max-width: 500px) {
+  .navbar {
+    font-size: 13px;
+  }
+
+  .navbar-left img {
+    width: 70px;
+  }
+
+  .navbar-right {
+    gap: 8px;
+  }
+
+  .navbar-right .profile {
+    width: 32px;
+  }
+}
